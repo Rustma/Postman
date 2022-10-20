@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "b26a9336-2c3b-4947-a57a-4c4ed7f714bf",
+		"name": "diploma",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19228115"
+	},
+	"item": [
+		{
+			"name": "Логин курьера в системе",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"russo\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url_diploma}}/api/v1/courier/login",
+					"host": [
+						"{{server_url_diploma}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courier",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание заказа",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Rustik\",\r\n    \"lastName\": \"Uchiha\",\r\n    \"address\": \"Konoha, 142 apt.\",\r\n    \"metroStation\": 50,\r\n    \"phone\": \"+7 800 355 35 35\",\r\n    \"rentTime\": 2,\r\n    \"deliveryDate\": \"2022-05-31\",\r\n    \"comment\": \"Saske, come back to Konoha\",\r\n    \"color\": [\r\n        \"BLACK\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url_diploma}}/api/v1/orders",
+					"host": [
+						"{{server_url_diploma}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание курьера",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"russo\",\r\n    \"password\": \"1234\",\r\n    \"firstName\": \"Rustam\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url_diploma}}/api/v1/courier",
+					"host": [
+						"{{server_url_diploma}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courier"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Завершить заказ",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{server_url_diploma}}/api/v1/orders/finish/:id",
+					"host": [
+						"{{server_url_diploma}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"finish",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение списка заказов",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_url_diploma}}/api/v1/orders",
+					"host": [
+						"{{server_url_diploma}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить заказ по его номеру",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_url_diploma}}/api/v1/orders/track?t=816221",
+					"host": [
+						"{{server_url_diploma}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"track"
+					],
+					"query": [
+						{
+							"key": "t",
+							"value": "816221"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Поиск станции метро по названию",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_url_diploma}}/api/v1/stations/search?s=Сокольники",
+					"host": [
+						"{{server_url_diploma}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"stations",
+						"search"
+					],
+					"query": [
+						{
+							"key": "s",
+							"value": "Сокольники"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление курьера",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{server_url_diploma}}/api/v1/courier/:id",
+					"host": [
+						"{{server_url_diploma}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courier",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить заказ по его номеру",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_url_diploma}}/v1/orders/track?t=123456",
+					"host": [
+						"{{server_url_diploma}}"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"track"
+					],
+					"query": [
+						{
+							"key": "t",
+							"value": "123456"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
